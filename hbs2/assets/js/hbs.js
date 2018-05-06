@@ -1081,7 +1081,3 @@ $(document).ready( function() {
 	}
 
 });
-
-
-
-
