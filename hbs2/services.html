@@ -112,10 +112,10 @@
 							                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">SERVICES <i class="fa fa-angle-down"></i></a>
 							                  <ul class="dropdown-menu" role="menu">
 								                    <li class="dropdown ">
-									                      <a href="services.html#service1">Tally AMC</a>
+									                      <a href="services.html" id="service" data-section="#service1" >Tally AMC</a>
 								                    </li>
 								                    <li class="dropdown ">
-									                    <a href="services.html#service2">Tally Care</a>
+									                    <a href="services.html" id="service" data-section="#service2">Tally Care</a>
 								                    </li>
 								                    <li class="dropdown ">
 									                    <a href="services.html#service3">Tally Training & Implementation</a>
@@ -597,15 +597,15 @@
 			       this.src = this.src;
 		       });
 	       });
-         jQuery(document).ready(animateToSection);
+         //jQuery(document).ready(animateToSection);
+         $(document).on('click', '#service' , function(el, i, g) {
+           var $el = $(el.target);
+           var section = $el.data('section');
+           $('body').animate({
+             scrollTop: $(section).offset().top - 1000
+           }, 3000);
 
-         function animateToSection() {
-             if (window.location.hash != null && window.location.hash != '') {
-               $('body').animate({
-                 scrollTop: $(window.location.hash).offset().top
-               }, 100);
-             }
-         }
+         });
 	      </script>
 	      <!-- <div id="demo-panel">
 		         <a href="#" onclick="toggleDemoPanel(event);"><i class="fa fa-cog fa-spin"></i></a>
